@@ -28,8 +28,6 @@ exports.createPages = async gatsbyUtilities => {
 
 }
 
-
-
 const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
   Promise.all(
     designs.map(({ design }) =>

@@ -7,7 +7,6 @@
  */
 
 module.exports = {
-
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
@@ -28,8 +27,7 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
-          process.env.WPGRAPHQL_URL ||
-          `https://portfolio.kjhuer.net/graphql`,
+          process.env.WPGRAPHQL_URL || `https://portfolio.kjhuer.net/graphql`,
       },
     },
 
@@ -59,7 +57,10 @@ module.exports = {
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
-        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
         web: [
           {
             name: `Quicksand`,
@@ -83,14 +84,14 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sass`,
-      options:{
+      options: {
         implementation: require("sass"),
-        additionalData: `@use "./src/styles/variables/_variables.scss" as var;`
-      }
+        additionalData: `@use "./src/styles/variables/_variables.scss" as var;`,
+      },
     },
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
     /**
      * this (optional) plugin enables Progressive Web App + Offline functionality
      * To learn more, visit: https://gatsby.dev/offline
