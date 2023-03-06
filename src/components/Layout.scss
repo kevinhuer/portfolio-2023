@@ -1,0 +1,38 @@
+#header-container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1200px;
+    padding: 0 50px;
+}
+#header {
+    background: white;
+    box-shadow: 2px 0px 5px gainsboro;
+    margin: auto;
+    padding: 0 50px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+#main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 50px;
+}
+
+
+
+#logo a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

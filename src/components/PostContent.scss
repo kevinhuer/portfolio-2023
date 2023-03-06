@@ -1,0 +1,40 @@
+.content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-top: 150px;
+  .text-content {
+    max-width: 50%;
+    padding-right: 40px;
+    .post-title {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    .post-content {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-wrap: wrap;
+    .text-content {
+      max-width: 100%;
+      padding-right: 0;
+    }
+    .image-content {
+      margin: auto;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+    .content{
+        margin-top: 200px
+    }
+}

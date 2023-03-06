@@ -1,0 +1,17 @@
+.design-post-layout {
+  background-color: #f4f4f4;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #ffffff 0,
+    #ffffff 1.3px,
+    #f4f4f4 0,
+    #f4f4f4 50%
+  );
+  background-size: 13px 13px;
+  opacity: 1;
+  #header-container {
+    padding: 0 50px;
+  }
+}
+
+
