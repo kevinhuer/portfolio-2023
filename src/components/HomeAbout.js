@@ -8,7 +8,7 @@ import "./HomeAbout.scss"
 const HomeAbout = () => {
   const data = useStaticQuery(QUERY)
   if (!data) return
-  console.log("about", data)
+
   const {
     wpPage: {
       id,

@@ -6,6 +6,7 @@ const HomeItemRow = ({ items, title, type = "designs" }) => {
   if (!items) return
 
   const titleId = title.toLowerCase().replaceAll(" ", "-")
+
   return (
     <div id={titleId} className="home-item-row">
       <h2>{title}</h2>

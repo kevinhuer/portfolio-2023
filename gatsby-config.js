@@ -7,6 +7,9 @@
  */
 
 module.exports = {
+  flags: {
+    DETECT_NODE_MUTATIONS: true,
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
@@ -28,7 +31,7 @@ module.exports = {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `https://kjhuer.net/graphql`,
+          `https://portfolio.kjhuer.net/graphql`,
       },
     },
 
