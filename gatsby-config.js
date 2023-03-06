@@ -7,9 +7,7 @@
  */
 
 module.exports = {
-  flags: {
-    DETECT_NODE_MUTATIONS: true,
-  },
+
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
