@@ -6,6 +6,7 @@ import Menu from "./Menu"
 const Layout = ({ children, isHome = false }) => {
   return (
     <>
+
       <div id="header">
         <div id="header-container">
           <div id="logo">

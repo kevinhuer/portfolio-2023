@@ -4,6 +4,9 @@ export const Head = ({ location, data }) => {
   if (!data.hasOwnProperty("wpSite") && !data.hasOwnProperty("wpDesign"))
     return (
       <>
+
+
+
         <title>{`Kevin Huer - Portfolio`}</title>
         <meta
           name="description"
@@ -21,7 +24,8 @@ export const Head = ({ location, data }) => {
       : `Kevin Huer - Portfolio`
   return (
     <>
-    
+ 
+
       <title>{siteTitle}</title>
       <meta
         name="description"
