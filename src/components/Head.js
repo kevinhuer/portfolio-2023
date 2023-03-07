@@ -4,9 +4,8 @@ export const Head = ({ location, data }) => {
   if (!data.hasOwnProperty("wpSite") && !data.hasOwnProperty("wpDesign"))
     return (
       <>
-
-
-
+        <html lang="en" />
+        <body className="my-body-class" />
         <title>{`Kevin Huer - Portfolio`}</title>
         <meta
           name="description"
@@ -24,8 +23,8 @@ export const Head = ({ location, data }) => {
       : `Kevin Huer - Portfolio`
   return (
     <>
- 
-
+      <html lang="en" />
+      <body className="my-body-class" />
       <title>{siteTitle}</title>
       <meta
         name="description"
@@ -35,4 +34,3 @@ export const Head = ({ location, data }) => {
   )
 }
 
-export default Head

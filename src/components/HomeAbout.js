@@ -11,7 +11,6 @@ const HomeAbout = () => {
 
   const {
     wpPage: {
-      id,
       content,
       title,
       about: { linkedinUrl },
