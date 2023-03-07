@@ -13,7 +13,7 @@ const DesignPostTemplate = ({ data: { wpDesign } }) => {
   const { content, title, designs } = wpDesign
   const mockupImage = getImage(designs.mainMockup.localFile)
   const largeImage = getImage(designs.largeMockup.localFile)
-
+  console.log("designs.largemockup.altext", designs)
   return (
     <div className="design-post-layout">
       <Layout>

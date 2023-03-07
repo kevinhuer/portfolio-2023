@@ -11,7 +11,7 @@ const Main = () => {
   return (
     <div className="home-page-layout">    
       <Layout>
-      <h1 className="hidden-title">Kevin Huer - Portfolio</h1>
+      <h1 className="hidden-title">Kevin Huer - Creator of websites and digital assets</h1>
         <FullWidthBanner id={"home-banner-main"}>
           <div className="home-banner-cta">
             <h2>Beautiful, custom website design and delivery</h2>

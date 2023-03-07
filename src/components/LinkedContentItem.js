@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import "./LinkedContentItem.scss"
 
 const LinkedContentItem = ({id, link, title, backImage, frontImage, backAlt, frontAlt}) => {
-
   return (
     <Link key={id} className="linked-content-item" to={link}>
       <div className="linked-content">
