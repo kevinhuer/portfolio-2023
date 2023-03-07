@@ -7,7 +7,16 @@
  */
 
 module.exports = {
+  
+  siteMetadata: {
+    title: `Kevin Huer Portfolio`,
+    description: `WordPress specialist and front end web developer`,
+    twitterUsername: ``,
+    image: `content/assets/gatsby-icon.png`,
+    siteUrl: `https://www.kevinhuer.com`,
+  },
   /**
+   * 
    * Adding plugins to this array adds them to your Gatsby site.
    *
    * Gatsby has a rich ecosystem of plugins.

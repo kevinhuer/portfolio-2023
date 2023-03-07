@@ -4,8 +4,8 @@ import HomeAbout from "../components/HomeAbout"
 import Layout from "../components/layout"
 import Designs from "../components/Designs"
 import FullWidthBanner from "../components/FullWidthBanner"
-import "../styles/global.scss"
 import Sites from "../components/Sites"
+import "../styles/global.scss"
 
 const Main = () => {
   return (
@@ -37,3 +37,5 @@ const Main = () => {
 }
 
 export default Main
+
+export {Head} from '../components/Head';
