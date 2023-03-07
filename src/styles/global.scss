@@ -25,3 +25,13 @@ a
  {
   font-weight: 600;
 }
+
+.home-page-layout{
+  .hidden-title{
+    width: 1px;
+    height: 1px;
+    font-size:0.1rem;
+    visibility: hidden;
+    margin: 0;
+  }
+}
