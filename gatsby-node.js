@@ -3,7 +3,7 @@ const chunk = require(`lodash/chunk`)
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
- //const { dd } = require(`dumper.js`)
+//const { dd } = require(`dumper.js`)
 
 /**
  * exports.createPages is a built-in Gatsby Node API.
@@ -24,13 +24,12 @@ exports.createPages = async gatsbyUtilities => {
   // If there are posts, create pages for them
 
   await createIndividualDesignPostPages({ designs, gatsbyUtilities })
-  await createIndividualSitePostPages({sites, gatsbyUtilities})
-
+  await createIndividualSitePostPages({ sites, gatsbyUtilities })
 }
 
 const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
   Promise.all(
-    designs.map(({ design }) =>
+    designs.map(({ previous, design, next }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       gatsbyUtilities.actions.createPage({
@@ -48,14 +47,17 @@ const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
           // so our blog post template knows which blog post
           // the current page is (when you open it in a browser)
           id: design.id,
+          // We also use the next and previous id's to query them and add links!
+          previousPostId: previous ? previous.id : null,
+          nextPostId: next ? next.id : null,
         },
       })
     )
   )
 
-  const createIndividualSitePostPages = async ({ sites, gatsbyUtilities }) =>
+const createIndividualSitePostPages = async ({ sites, gatsbyUtilities }) =>
   Promise.all(
-    sites.map(({ site }) =>
+    sites.map(({ previous, site, next }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       gatsbyUtilities.actions.createPage({
@@ -73,19 +75,27 @@ const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
           // so our blog post template knows which blog post
           // the current page is (when you open it in a browser)
           id: site.id,
+          previousPostId: previous ? previous.id : null,
+          nextPostId: next ? next.id : null,
         },
       })
     )
-  )  
+  )
 
 async function getDesigns({ graphql, reporter }) {
-  const graphqlResult = await graphql(/* GraphQL */ `
+  const graphqlResult = await graphql(`
     query Designs {
       allWpDesign {
         edges {
-          design:node {
-            id,
+          previous {
+            id
+          }
+          design: node {
+            id
             uri
+          }
+          next {
+            id
           }
         }
       }
@@ -104,13 +114,19 @@ async function getDesigns({ graphql, reporter }) {
 }
 
 async function getSites({ graphql, reporter }) {
-  const graphqlResult = await graphql(/* GraphQL */ `
+  const graphqlResult = await graphql(`
     query Sites {
       allWpSite {
         edges {
-          site:node {
-            id,
+          previous {
+            id
+          }
+          site: node {
+            id
             uri
+          }
+          next {
+            id
           }
         }
       }

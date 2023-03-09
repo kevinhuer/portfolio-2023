@@ -3,13 +3,15 @@ import { graphql } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
 import ReflectedImage from "../components/ReflectedImage"
 import Layout from "../components/layout"
-import "./site-post.scss"
 import PostContent from "../components/PostContent"
+import PostNavigation from "../components/PostNavigation"
+import "./site-post.scss"
 
-const SitePostTemplate = ({ data: { wpSite } }) => {
-  if (!wpSite) return
 
-  const { content, title, sites, sites:{siteUrl} } = wpSite
+const SitePostTemplate = ({ data: { previous, site, next } }) => {
+  if (!site) return
+
+  const { content, title, sites, sites:{siteUrl} } = site
   const mockupImage = getImage(sites.mainMockup.localFile)
   const largeImage = getImage(sites.fullDesign.localFile)
 
@@ -26,6 +28,7 @@ const SitePostTemplate = ({ data: { wpSite } }) => {
             siteUrl={siteUrl}
           />
         </div>
+        <PostNavigation previous={previous} next={next} />
       </Layout>
     </div>
   )
@@ -34,8 +37,12 @@ const SitePostTemplate = ({ data: { wpSite } }) => {
 export default SitePostTemplate
 
 export const pageQuery = graphql`
-  query SitePostById($id: String!) {
-    wpSite(id: { eq: $id }) {
+  query SitePostById(
+    $id: String!    
+    $previousPostId: String
+    $nextPostId: String
+    ) {
+    site: wpSite(id: { eq: $id }) {
       title
       content
       sites {
@@ -65,6 +72,14 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+    previous: wpSite(id: { eq: $previousPostId }) {
+      uri
+      title
+    }
+    next: wpSite(id: { eq: $nextPostId }) {
+      uri
+      title
     }
   }
 `

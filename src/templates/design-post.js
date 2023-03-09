@@ -1,19 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+import { getImage } from "gatsby-plugin-image"
 import ReflectedImage from "../components/ReflectedImage"
 import Layout from "../components/layout"
-import "./design-post.scss"
 import PostContent from "../components/PostContent"
+import PostNavigation from "../components/PostNavigation"
+import "./design-post.scss"
 
-const DesignPostTemplate = ({ data: { wpDesign } }) => {
-  if (!wpDesign) return
 
-  const { content, title, designs } = wpDesign
+const DesignPostTemplate = ({ data: { design, next, previous } }) => {
+  if (!design) return
+
+  const { content, title, designs } = design
+ if (previous) console.log("previous", previous)
   const mockupImage = getImage(designs.mainMockup.localFile)
   const largeImage = getImage(designs.largeMockup.localFile)
-  console.log("designs.largemockup.altext", designs)
+
   return (
     <div className="design-post-layout">
       <Layout>
@@ -29,6 +31,7 @@ const DesignPostTemplate = ({ data: { wpDesign } }) => {
             alt={designs.largeMockup.altText}
           />
         </div>
+        <PostNavigation next={next} previous={previous}/>
       </Layout>
     </div>
   )
@@ -37,8 +40,12 @@ const DesignPostTemplate = ({ data: { wpDesign } }) => {
 export default DesignPostTemplate
 
 export const pageQuery = graphql`
-  query DesignPostById($id: String!) {
-    wpDesign(id: { eq: $id }) {
+  query DesignPostById(
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
+    design: wpDesign(id: { eq: $id }) {
       title
       content
       designs {
@@ -68,6 +75,14 @@ export const pageQuery = graphql`
         }
       }
     }
+    previous: wpDesign(id: { eq: $previousPostId }) {
+      uri
+      title
+    }
+    next: wpDesign(id: { eq: $nextPostId }) {
+      uri
+      title
+    }
   }
 `
-export {Head} from '../components/Head';
+export { Head } from "../components/Head"

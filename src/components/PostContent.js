@@ -4,7 +4,7 @@ import parse from "html-react-parser"
 import "./PostContent.scss"
 
 const PostContent = ({ title, content, image, alt, siteUrl }) => {
-  console.log("title: ", title, "   alt:", alt)
+
   return (   
     <>
       <div className="content">

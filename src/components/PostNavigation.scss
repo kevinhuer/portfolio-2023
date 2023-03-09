@@ -1,0 +1,36 @@
+.PostNavigation {
+  background: #232323;
+  color: white;
+  display: block;
+  margin-top: 20px;
+  padding: 20px 20px;
+  width: 100%;
+  i,
+  a {
+    color: white;
+  }
+  .container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .container-link {
+      min-width: 200px;
+      text-align: center;
+      .previous-text {
+        margin-left: 10px;
+      }
+      .next-text {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .PostNavigation {
+    .container {
+      justify-content: center;
+    }
+  }
+}
