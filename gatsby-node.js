@@ -29,7 +29,7 @@ exports.createPages = async gatsbyUtilities => {
 
 const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
   Promise.all(
-    designs.map(({ previous, design, next }) =>
+    designs.map(({ design, previous, next }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       gatsbyUtilities.actions.createPage({
@@ -48,7 +48,7 @@ const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
           // the current page is (when you open it in a browser)
           id: design.id,
           // We also use the next and previous id's to query them and add links!
-          previousPostId: previous ? previous.id : null,
+           previousPostId: previous ? previous.id : null,
           nextPostId: next ? next.id : null,
         },
       })
@@ -57,7 +57,7 @@ const createIndividualDesignPostPages = async ({ designs, gatsbyUtilities }) =>
 
 const createIndividualSitePostPages = async ({ sites, gatsbyUtilities }) =>
   Promise.all(
-    sites.map(({ previous, site, next }) =>
+    sites.map(({ site, previous, next }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       gatsbyUtilities.actions.createPage({
@@ -75,8 +75,8 @@ const createIndividualSitePostPages = async ({ sites, gatsbyUtilities }) =>
           // so our blog post template knows which blog post
           // the current page is (when you open it in a browser)
           id: site.id,
-          previousPostId: previous ? previous.id : null,
-          nextPostId: next ? next.id : null,
+           previousPostId: previous ? previous.id : null,
+           nextPostId: next ? next.id : null,
         },
       })
     )
@@ -87,16 +87,16 @@ async function getDesigns({ graphql, reporter }) {
     query Designs {
       allWpDesign {
         edges {
-          previous {
-            id
-          }
+           previous {
+             id
+           }
           design: node {
             id
             uri
           }
-          next {
-            id
-          }
+           next {
+             id
+           }
         }
       }
     }
@@ -118,16 +118,16 @@ async function getSites({ graphql, reporter }) {
     query Sites {
       allWpSite {
         edges {
-          previous {
-            id
-          }
+           previous {
+             id
+           }
           site: node {
             id
             uri
           }
-          next {
-            id
-          }
+           next {
+             id
+           }
         }
       }
     }

@@ -8,7 +8,7 @@ import PostNavigation from "../components/PostNavigation"
 import "./site-post.scss"
 
 
-const SitePostTemplate = ({ data: { previous, site, next } }) => {
+const SitePostTemplate = ({ data: {  site, previous, next } }) => {
   if (!site) return
 
   const { content, title, sites, sites:{siteUrl} } = site
@@ -28,7 +28,7 @@ const SitePostTemplate = ({ data: { previous, site, next } }) => {
             siteUrl={siteUrl}
           />
         </div>
-        <PostNavigation previous={previous} next={next} />
+        <PostNavigation previous={previous} next={next} /> 
       </Layout>
     </div>
   )
@@ -39,8 +39,8 @@ export default SitePostTemplate
 export const pageQuery = graphql`
   query SitePostById(
     $id: String!    
-    $previousPostId: String
-    $nextPostId: String
+     $previousPostId: String
+     $nextPostId: String
     ) {
     site: wpSite(id: { eq: $id }) {
       title

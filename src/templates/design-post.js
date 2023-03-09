@@ -8,11 +8,11 @@ import PostNavigation from "../components/PostNavigation"
 import "./design-post.scss"
 
 
-const DesignPostTemplate = ({ data: { design, next, previous } }) => {
+const DesignPostTemplate = ({ data: { design, previous, next } }) => {
   if (!design) return
 
   const { content, title, designs } = design
- if (previous) console.log("previous", previous)
+
   const mockupImage = getImage(designs.mainMockup.localFile)
   const largeImage = getImage(designs.largeMockup.localFile)
 
@@ -31,7 +31,7 @@ const DesignPostTemplate = ({ data: { design, next, previous } }) => {
             alt={designs.largeMockup.altText}
           />
         </div>
-        <PostNavigation next={next} previous={previous}/>
+       <PostNavigation next={next} previous={previous}/> 
       </Layout>
     </div>
   )
