@@ -10,7 +10,9 @@
         margin-bottom: 0;
         margin-top: 20px;
     }
-  
+  .hidden{
+    
+  }
   input {  
     width: 49%;
     margin-bottom: 20px;
@@ -19,12 +21,13 @@
     font-weight: 600;
     padding: 10px;
     border-radius: 5px;
-    &:first-child{
-        margin-right: 2%;
-    }    
+       
   }
   label{
     color: white;
+    &.hidden{
+      display: none;
+    }
   }
   textarea {
     width: 100%;
@@ -56,10 +59,20 @@
     padding: 20px 50px;
     border-radius: 20px;
     overflow: hidden;
+    .id-container{
+      .left-input{
+        margin-right: 1%;
+      }
+      .right-input{
+        margin-left: 1%;
+      }
+    }
     .test-question{
       max-width: 60px;
       margin-left: 20px;
       font-family: 'Quicksand';
+      margin-top: 1px;
+      margin-bottom: 1px;
     }
     h2{
         margin: 0;
@@ -73,9 +86,14 @@
     
       input { 
         width: 100%;
-        &:first-child{
+        .left-input{
             margin-right: 0;
             margin-top: 20px;
+            margin-bottom: 0;
+        }
+        .right-input{
+          margin-left: 0;
+          margin-top: 20px;
             margin-bottom: 0;
         }
        }

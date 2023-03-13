@@ -73,21 +73,28 @@ const ContactForm = () => {
         <h2>Contact me</h2>
         <form onSubmit={handleSubmit}>
           <div className="id-container">
+            <label htmlFor="name" className="hidden">Name</label>
             <input
+            className="left-input"
               type="text"
               name="name"
               placeholder="Name"
               value={name}
               onChange={handleNameUpdate}
             />
+           
+            <label htmlFor="email" className="hidden">Email</label>
             <input
+              className="right-input"
               type="email"
               name="email"
               placeholder="Email"
               value={email}
               onChange={handleEmailUpdate}
             />
+         
           </div>
+          <label htmlFor="message" className="hidden">Message</label>
           <textarea
             type="text"
             name="message"
@@ -95,8 +102,9 @@ const ContactForm = () => {
             value={message}
             onChange={handleMessageUpdate}
           /> 
+        
           <div className="id-container">
-          <label>What is ten minus 3?
+          <label htmlFor="test_question">What is ten minus 3?</label>
           <input
               className="test-question"
               type="number"
@@ -104,8 +112,7 @@ const ContactForm = () => {
               placeholder=""
               value={testNumber}
               onChange={handleTestNumberUpdate}
-            />  
-            </label>   
+            />    
             </div>
           <button type="submit" onClick={handleSubmit}>
             Submit
