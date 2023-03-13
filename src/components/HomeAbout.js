@@ -23,7 +23,7 @@ const HomeAbout = () => {
       {parse(content)}
 
       <div className="about-link-container">
-        <a href={linkedinUrl} target="_blank" className="about-link">
+        <a href={linkedinUrl} target="_blank" rel="noreferrer" className="about-link">
           Contact me on LinkedIn <FontAwesomeIcon icon={faLinkedin} />
         </a>
       </div>

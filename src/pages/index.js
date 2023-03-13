@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Designs from "../components/Designs"
 import FullWidthBanner from "../components/FullWidthBanner"
 import Sites from "../components/Sites"
+import ContactForm from "../components/ContactForm"
 import "../styles/global.scss"
 
 const Main = () => {
@@ -31,7 +32,9 @@ const Main = () => {
           <HomeAbout />
           <Designs />
           <Sites />
+          <ContactForm />
         </div>
+   
       </Layout>
     </div>
   )
