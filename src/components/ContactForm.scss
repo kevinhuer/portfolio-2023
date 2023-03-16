@@ -1,102 +1,108 @@
 .ContactForm {
-    text-align: center;
-    width: 600px;
-    max-width: 90%;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    .error, .success{
-        color: white;      
-        min-height: 30px;
-        margin-bottom: 0;
-        margin-top: 20px;
-    }
-  .hidden{
-    
+  background: linear-gradient(175deg, rgb(226 226 226) 21%, rgb(197 197 197) 70%);
+  margin-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+  .error,
+  .success {
+    color: #282828;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 20px;
+    min-height: 30px;
   }
-  input {  
-    width: 49%;
+  input {
+    border: 2px solid gainsboro;
+    border-radius: 5px;
+    box-shadow: none;
+    font-family: "Quicksand";
+    font-weight: 600;
     margin-bottom: 20px;
     margin-top: 20px;
-    font-family: 'Quicksand';
-    font-weight: 600;
     padding: 10px;
-    border-radius: 5px;
-       
+    width: 49%;
   }
-  label{
-    color: white;
-    font-family: 'Quicksand';
-    &.hidden{
+  label {
+    color: #282828;
+    font-family: "Quicksand";
+    font-weight: 700;
+    &.hidden {
       display: none;
     }
   }
   textarea {
-    width: 100%;
-    min-height: 300px;
-    font-family: 'Quicksand';
-    font-weight: 600;
-    padding: 10px;
-    margin-bottom: 20px;
+    border: 2px solid gainsboro;
     border-radius: 5px;
+    box-shadow: none;
+    font-family: "Quicksand";
+    font-weight: 600;
+    margin-bottom: 20px;
+    min-height: 300px;
+    padding: 10px;
+    width: 100%;
   }
   button {
     background: none;
-    margin-top: 20px;
-    color: white;
-    padding: 10px;
+    background: white;
+    border: 1px solid #282828;
+    border-color: #282828;
     border-radius: 5px;
-    font-weight: 400;
-    border-color: white;
-    letter-spacing: 2px;
+    box-shadow: none;
+    color: #282828;
     cursor: pointer;
-    &:hover{
-      background: white;
-      color: #232323;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    padding: 10px;
+    &:hover {
+      background: #282828;
+      color: white;
       font-weight: 700;
     }
   }
   .form-container {
-    background: #232323;
-    padding: 20px 50px;
-    border-radius: 20px;
+    margin: 20px auto 0;
+    max-width: 600px;
     overflow: hidden;
-    .id-container{
-      .left-input{
+    padding: 20px 50px;
+    .id-container {
+      .left-input {
         margin-right: 1%;
       }
-      .right-input{
+      .right-input {
         margin-left: 1%;
       }
     }
-    .test-question{
-      max-width: 60px;
-      margin-left: 20px;
-      font-family: 'Quicksand';
-      margin-top: 1px;
+    .test-question {
+      color: #282828;
+      font-family: "Quicksand";
       margin-bottom: 1px;
+      margin-left: 20px;
+      margin-top: 1px;
+      max-width: 60px;
     }
-    h2{
-        margin: 0;
-        color: white;
-        font-weight: 400;
-    }    
+    h2 {
+      font-weight: 700;
+      margin: 0;
+    }
   }
 }
 @media (max-width: 600px) {
-    .ContactForm {
-    
-      input { 
-        width: 100%;
-        .left-input{
-            margin-right: 0;
-            margin-top: 20px;
-            margin-bottom: 0;
-        }
-        .right-input{
-          margin-left: 0;
-          margin-top: 20px;
-            margin-bottom: 0;
-        }
-       }
+  .ContactForm {
+    input {
+      width: 100%;
+      .left-input {
+        margin-bottom: 0;
+        margin-right: 0;
+        margin-top: 20px;
+      }
+      .right-input {
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-top: 20px;
+      }
     }
+  }
 }

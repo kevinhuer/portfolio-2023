@@ -16,7 +16,6 @@ const Layout = ({ children, isHome = false }) => {
         </div>
       </div>
       {children}
-      <div id="footer"></div>
     </>
   )
 }

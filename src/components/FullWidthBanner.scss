@@ -19,11 +19,10 @@
   }
   h2 {
     color: white;
-    margin-bottom: 20px;
-    margin-top: 0;
 
     font-weight: 700;
-    
+    margin-bottom: 20px;
+    margin-top: 0;
   }
 }
 .home-banner-pattern {
@@ -88,7 +87,7 @@
 }
 
 .home-banner-btn {
- @extend %dark-button-left;
+  @extend %dark-button-left;
 }
 
 @media (max-width: 1200px) {
