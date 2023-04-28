@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import HomeItemRow from "./HomeItemRow"
+import EdgeListing from "./EdgeListing"
 
 const Designs = () => {
   const {
@@ -8,7 +9,8 @@ const Designs = () => {
   } = useStaticQuery(QUERY)
   if (!edges) return
   return (
-      <HomeItemRow items={edges} title={'Recent design work'} type={'designs'}/> 
+    <EdgeListing edges={edges} type={`designs`}/>
+    // <HomeItemRow items={edges} title={"Recent design work"} type={"designs"} />
   )
 }
 
@@ -38,6 +40,7 @@ const QUERY = graphql`
             }
           }
           designs {
+            largeMockupUrl
             mainMockup {
               localFile {
                 childImageSharp {
@@ -49,6 +52,9 @@ const QUERY = graphql`
                 }
               }
               altText
+            }
+            largeMockup {
+              sourceUrl
             }
           }
         }

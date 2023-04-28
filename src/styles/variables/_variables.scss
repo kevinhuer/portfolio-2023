@@ -1,5 +1,7 @@
+$width: 1200px;
+
 %dark-button {
-  background: #222222;
+  background: #111111;
   border-radius: 5px;
   color: white;
   margin: auto;
@@ -7,10 +9,63 @@
   text-decoration: none;
 }
 %dark-button-left {
-    background: #222222;
-    border-radius: 5px;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
+  background: #111111;
+  border-radius: 5px;
+  color: white;
+  overflow: hidden;
+  padding: 10px 15px;
+  position: relative;
+  text-decoration: none;
+  transform: scale(1);
+  transition: all 0.2s;
+  &:after {
+    background: rgba(255, 255, 255, 0.2);
+    content: "";
+    filter: blur(10px);
+    height: 100px;
+    left: -25%;
+    position: absolute;
+    top: -25px;
+    transition: all 0s;
+    width: 25px;
   }
-  
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.4s;
+    &:after {
+      left: 110%;
+      transition: all 0.4s;
+    }
+  }
+}
+
+%fixed-width {
+  margin: auto;
+  max-width: $width;
+}
+
+%flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+%flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-space-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-space-around {
+  align-items: center;
+  justify-content: space-around;
+}
+
+%flex-left {
+  align-items: flex-start;
+  justify-content: flex-start;
+}

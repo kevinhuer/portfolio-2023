@@ -1,22 +1,24 @@
 import React from "react"
 import { Link } from "gatsby"
-import "./Layout.scss"
 import Menu from "./Menu"
+import FixedWidthRow from "./FixedWidthRow"
+import "./Layout.scss"
 
 const Layout = ({ children, isHome = false }) => {
   return (
-    <>
-
+    <div id="layout">
       <div id="header">
-        <div id="header-container">
-          <div id="logo">
-            <Link to={"/"}>Kevin Huer</Link>
+        <FixedWidthRow>
+          <div id="header-container">
+            <div id="logo">
+              <Link to={"/"}>Kevin Huer</Link>
+            </div>
+            <Menu />
           </div>
-          <Menu />
-        </div>
+        </FixedWidthRow>
       </div>
       {children}
-    </>
+    </div>
   )
 }
 

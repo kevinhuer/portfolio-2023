@@ -10,11 +10,8 @@
     color: white;
   }
   .container {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @extend %flex-space-between;
+    @extend %flex-row;
     .container-link {
       min-width: 200px;
       text-align: center;

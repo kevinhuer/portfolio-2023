@@ -1,0 +1,35 @@
+.EdgeListing {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 40px;
+  .EdgeItem {
+    text-align: center;
+    border: 1px solid rgb(40, 40, 40);
+    background: rgb(40, 40, 40);
+    padding-bottom: 20px;
+    color: white;
+    margin: auto;
+    text-decoration: none;
+    .title{
+        overflow:hidden;
+        max-width: 200px;
+        margin: auto;
+        @extend %dark-button-left;
+        text-decoration: none;
+    }
+    &.design {
+    }
+  }
+}
+@media (max-width: 1000px) {
+    .EdgeListing {
+        display: grid;
+        grid-template-rows: repeat(1, auto);
+        grid-template-columns: repeat(1, 100%);
+        grid-gap: 20px;
+    }
+}

@@ -15,35 +15,34 @@ const Menu = () => {
     <div id="menu">
       <ul className="desktop">
         <li>
-          <Link to={"/"}>Home</Link>
+          <Link to={"/about"}>About</Link>
         </li>
         <li>
-          <Link to={"/#recent-design-work"}>Design Work</Link>
+          <Link to={"/designs"}>Design Work</Link>
         </li>
         <li>
-          <Link to={"/#recent-client-work"}>Client Work</Link>
+          <Link to={"/sites"}>Client Work</Link>
         </li>
-        <li>
-          <Link to={"/#contact"}>Contact</Link>
-        </li>
+    
       </ul>
       <button className="mobile-toggle" onClick={handleClick}>
         Menu
       </button>
 
       <ul className={mobileMenuClass}>
-        <li>
+      <li>
           <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <Link to={"/#recent-design-work"}>Design Work</Link>
+          <Link to={"/about"}>About</Link>
         </li>
         <li>
-          <Link to={"/#recent-client-work"}>Client Work</Link>
+          <Link to={"/designs"}>Design Work</Link>
         </li>
         <li>
-          <Link to={"/#contact"}>Contact</Link>
+          <Link to={"/sites"}>Client Work</Link>
         </li>
+ 
         <li>
           <button className="menu-close" onClick={handleClick}>
             CLOSE

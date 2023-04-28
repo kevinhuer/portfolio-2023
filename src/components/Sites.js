@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import HomeItemRow from "./HomeItemRow"
+import EdgeListing from "./EdgeListing"
 
 const Sites = () => {
   const {
@@ -8,7 +9,9 @@ const Sites = () => {
   } = useStaticQuery(QUERY)
   if (!edges) return
   return (
-      <HomeItemRow items={edges} title={'Recent client work'} type={"sites"}/> 
+    <EdgeListing edges={edges} type={`sites`}/>
+    // <HomeItemRow items={edges} title={"Recent design work"} type={"designs"} />
+     // <HomeItemRow items={edges} title={'Recent client work'} type={"sites"}/> 
   )
 }
 

@@ -1,0 +1,5 @@
+.fixed-width-row{
+    @extend %fixed-width;
+    @extend %flex-row;
+    @extend %flex-center;
+}

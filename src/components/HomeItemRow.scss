@@ -1,15 +1,16 @@
 .home-item-row {
   margin-bottom: 20px;
   text-align: center;
+  h2 {
+    margin-bottom: 100vh;
+  }
   .home-item-row-items {
+    @extend %flex-row;
     align-items: flex-start;
     column-gap: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-
+    
     h3 {
       font-size: 1.3rem;
       margin-top: 5px;

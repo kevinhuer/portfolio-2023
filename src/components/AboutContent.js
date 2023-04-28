@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from "gatsby"
 import parse from "html-react-parser"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import "./HomeAbout.scss"
+import "./AboutContent.scss"
 
-const HomeAbout = () => {
+const AboutContent = () => {
   const data = useStaticQuery(QUERY)
   if (!data) return
 
@@ -31,7 +31,7 @@ const HomeAbout = () => {
   )
 }
 
-export default HomeAbout
+export default AboutContent
 
 const QUERY = graphql`
   query AboutQuery {

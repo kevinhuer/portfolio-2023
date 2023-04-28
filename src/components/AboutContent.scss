@@ -1,0 +1,20 @@
+.HomeAbout {
+  margin: auto;
+  margin-bottom: 50px; 
+  h2 {
+    color: white;
+    text-align: center;
+  }
+  p{
+    color: white;
+  }
+  .content-container {
+   @extend %flex-row;
+  }
+  .about-link-container {
+    text-align: center;
+    .about-link {
+      @extend %dark-button;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react"
-import LinkedContentItem from "./LinkedContentItem"
 import "./HomeItemRow.scss"
+import LinkedContentRow from "./LinkedContentRow"
 
 const HomeItemRow = ({ items, title, type = "designs" }) => {
   if (!items) return
@@ -11,7 +11,7 @@ const HomeItemRow = ({ items, title, type = "designs" }) => {
     <div id={titleId} className="home-item-row">
       <h2>{title}</h2>
       <div className="home-item-row-items">
-        {items.map(item => {
+        {items.map((item, i) => {
           const {
             node: {
               title,
@@ -19,6 +19,7 @@ const HomeItemRow = ({ items, title, type = "designs" }) => {
               id,
               featuredImage,
               [`${type}`]: {
+                largeMockupUrl,
                 mainMockup: {
                   altText,
                   localFile: { childImageSharp },
@@ -33,17 +34,19 @@ const HomeItemRow = ({ items, title, type = "designs" }) => {
               },
             },
           } = item
+          console.log("THE LARGE", item )
           return (
-            <LinkedContentItem
+            <LinkedContentRow
               key={id}
               link={link}
               id={id}
               title={title}
-              backImage={gatsbyImageData}
-              backAlt={featuredImage.node.altText}
               frontImage={childImageSharp.gatsbyImageData}
               frontAlt={altText}
-            />
+              isReverse={i % 2}
+              itt={i}
+              largeMockupUrl={largeMockupUrl}
+            />     
           )
         })}
       </div>

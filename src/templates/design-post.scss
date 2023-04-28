@@ -1,16 +1,15 @@
 .design-post-layout {
-  background-color: #f4f4f4;
-  background-image: repeating-linear-gradient(
-    45deg,
-    #ffffff 0,
-    #ffffff 1.3px,
-    #f4f4f4 0,
-    #f4f4f4 50%
-  );
+  background-color: #1C1C1C;
+  background-image: repeating-linear-gradient(45deg, #1c1c1c 0, #2c2c2c 1.3px, #212121 0, #1e1e1e 50%);
   background-size: 13px 13px;
   opacity: 1;
   #header-container {
-    padding: 0 50px;
+   // padding: 0 50px;
   }
- 
+ #main{
+  color: white;
+ }
+ .post-title{
+  color:white;
+ }
 }
