@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import "./EdgeListing.scss"
 
 const EdgeListing = ({ edges, type }) => {
@@ -13,6 +13,7 @@ const EdgeListing = ({ edges, type }) => {
         } = item
 
         const postType = designs ? designs : sites
+        console.log(postType.largeMockupUrl)
         return (
           <Link to={link} key={id} className={`EdgeItem ${type}`}>
             <article>
@@ -21,6 +22,11 @@ const EdgeListing = ({ edges, type }) => {
                   postType.mainMockup.localFile.childImageSharp.gatsbyImageData
                 }
                 alt={postType.mainMockup.altText}
+              />
+              <img
+                className="float-image"
+                src={postType.largeMockupUrl}
+                alt={`large mockup for ${title}`}
               />
               <div className="title">{title}</div>
             </article>
