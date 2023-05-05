@@ -6,7 +6,7 @@ import "../styles/global.scss"
 
 const AllDesigns = () => {
   return (
-    <Layout>
+    <Layout className="Design_Layout">
       <h1 className="post-title">Designs</h1>
       <FullWidthRow component={Designs}/>    
     </Layout>

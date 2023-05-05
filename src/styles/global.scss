@@ -30,6 +30,9 @@ a
 .home-page-layout{
   height: 75vh;
   position: relative;
+  #layout{
+    padding-top: 0;
+  }
   .image-back{
     position: absolute;
     bottom: 0;
