@@ -41,6 +41,7 @@ const QUERY = graphql`
             }
           }
           sites {
+            largeMockupUrl
             mainMockup {
               localFile {
                 childImageSharp {
