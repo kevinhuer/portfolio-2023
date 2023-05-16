@@ -17,9 +17,11 @@ const PostContent = ({ title, content, image, alt, siteUrl }) => {
           )}
           <div className="post-content">{parse(content)}</div>
         </div>
+        {image && 
         <div className="image-content">
           <GatsbyImage image={image} alt={alt} />
         </div>
+      }
       </div>
     </>
   )

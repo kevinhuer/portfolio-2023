@@ -22,9 +22,7 @@ const SitePostTemplate = ({ data: {  site, previous, next } }) => {
           <ReflectedImage image={mockupImage} alt={sites.mainMockup.altText} />
           <PostContent
             title={title}
-            content={content}
-            image={largeImage}
-            alt={sites.fullDesign.altText}
+            content={content}     
             siteUrl={siteUrl}
           />
         </div>

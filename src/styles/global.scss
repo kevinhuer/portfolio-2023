@@ -26,6 +26,9 @@ a
  {
   font-weight: 600;
 }
+.centered-text{
+  text-align: center;
+}
 
 .home-page-layout{
   height: 75vh;
@@ -57,4 +60,11 @@ a
   color:white;
   margin-top: 20px;
   text-align: center;
+}
+
+.site-post-layout{
+  .content{
+    justify-content: center;
+    align-items: center;
+  }
 }
