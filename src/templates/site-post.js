@@ -13,7 +13,6 @@ const SitePostTemplate = ({ data: {  site, previous, next } }) => {
 
   const { content, title, sites, sites:{siteUrl} } = site
   const mockupImage = getImage(sites.mainMockup.localFile)
-  const largeImage = getImage(sites.fullDesign.localFile)
 
   return (
     <div className="site-post-layout">
@@ -45,18 +44,6 @@ export const pageQuery = graphql`
       content
       sites {
         siteUrl
-        fullDesign {
-          altText
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                width: 600
-                placeholder: BLURRED
-                formats: [AUTO, WEBP, AVIF]
-              )
-            }
-          }
-        }
         mainMockup {
           altText
           localFile {
