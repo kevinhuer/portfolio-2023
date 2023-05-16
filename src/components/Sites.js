@@ -9,9 +9,12 @@ const Sites = () => {
   } = useStaticQuery(QUERY)
   if (!edges) return
   return (
-    <EdgeListing edges={edges} type={`sites`}/>
-    // <HomeItemRow items={edges} title={"Recent design work"} type={"designs"} />
-     // <HomeItemRow items={edges} title={'Recent client work'} type={"sites"}/> 
+    <>
+      <h2 className="centered-text">Recent freelance work</h2>
+      <EdgeListing edges={edges} type={`sites`} category={"Freelance"} />
+      <h2 className="centered-text">Past agency work</h2>
+      <EdgeListing edges={edges} type={`sites`} category={"Agency"} />
+    </>
   )
 }
 
@@ -25,6 +28,11 @@ const QUERY = graphql`
           id
           title
           link
+          categories {
+            nodes {
+              name
+            }
+          }
           featuredImage {
             node {
               altText
