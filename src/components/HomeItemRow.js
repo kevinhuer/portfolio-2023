@@ -17,21 +17,13 @@ const HomeItemRow = ({ items, title, type = "designs" }) => {
               title,
               link,
               id,
-              featuredImage,
               [`${type}`]: {
                 largeMockupUrl,
                 mainMockup: {
                   altText,
                   localFile: { childImageSharp },
                 },
-              },
-              featuredImage: {
-                node: {
-                  localFile: {
-                    childImageSharp: { gatsbyImageData },
-                  },
-                },
-              },
+              },              
             },
           } = item
         
