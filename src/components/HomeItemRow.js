@@ -34,7 +34,7 @@ const HomeItemRow = ({ items, title, type = "designs" }) => {
               },
             },
           } = item
-          console.log("THE LARGE", item )
+        
           return (
             <LinkedContentRow
               key={id}

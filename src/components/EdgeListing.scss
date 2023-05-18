@@ -55,8 +55,18 @@
 @media (max-width: 1000px) {
   .EdgeListing {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 5px;
     grid-template-columns: repeat(1, 100%);
     grid-template-rows: repeat(1, auto);
+    max-width: 560px;
+    .EdgeItem{
+      &:hover{
+        article{
+          .float-image{
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
