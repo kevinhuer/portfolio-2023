@@ -15,8 +15,7 @@ const LinkedContentRow = ({
 }) => {
 
   const defaultRadius = Math.round(Math.sqrt(Math.pow(1.2 * window.innerWidth, 2) + Math.pow(1.2 * window.innerHeight, 2)))
-  console.log("largeMockupUrl", largeMockupUrl)
-  const [scrollPosition, setScrollPosition] = useState(0)
+
   const [radius, setRadius] = useState(defaultRadius)
   const section = useRef(null)
   

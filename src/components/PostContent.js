@@ -12,7 +12,7 @@ const PostContent = ({ title, content, image, alt, siteUrl }) => {
           <h1 className="post-title">{title}</h1>
           {siteUrl && (
             <span className="post-url">
-              <a rel="noreferrer" target="_blank" href={siteUrl}>{siteUrl}</a>
+              <a rel="noopener noreferrer nofollow"  target="_blank" href={siteUrl}>{siteUrl}</a>
             </span>
           )}
           <div className="post-content">{parse(content)}</div>
