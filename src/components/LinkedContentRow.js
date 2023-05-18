@@ -30,7 +30,7 @@ const LinkedContentRow = ({
     // vid="cG9zdDo2NTM=" top
     // "cG9zdDo2Mzc=" second
     const { top, height } = section.current.getBoundingClientRect()
-    if (section.current.dataset.vid == "cG9zdDo2Mzc=") { console.log("top: ", top, "radius: ", radius, "window.innerWidth: ", window.innerWidth, "window.innerHeight: ", window.innerHeight )}
+    if (section.current.dataset.vid === "cG9zdDo2Mzc=") { console.log("top: ", top, "radius: ", radius, "window.innerWidth: ", window.innerWidth, "window.innerHeight: ", window.innerHeight )}
     const offScreen = top >= height
 
     // if you decrease beginReveal, you need to increase speedUp or more circle will be left showing
@@ -38,13 +38,13 @@ const LinkedContentRow = ({
     const speedUp = 10
 
     if (offScreen) {
-      if (section.current.dataset.vid == "cG9zdDo2Mzc=") { console.log("off screen") }
+      if (section.current.dataset.vid === "cG9zdDo2Mzc=") { console.log("off screen") }
       setRadius(defaultRadius)
     }
 
     if ((top > 0) && (top < beginReveal * height)) {
       const revealedTop = defaultRadius - speedUp * ((beginReveal * height) - top)
-      if (section.current.dataset.vid == "cG9zdDo2Mzc=") { console.log("revaledTop: ", revealedTop)}
+      if (section.current.dataset.vid === "cG9zdDo2Mzc=") { console.log("revaledTop: ", revealedTop)}
       setRadius(revealedTop >= 0 ? Math.round(revealedTop) : 0)
     }
   }

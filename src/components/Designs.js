@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import HomeItemRow from "./HomeItemRow"
 import EdgeListing from "./EdgeListing"
 
 const Designs = () => {
