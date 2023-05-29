@@ -22,7 +22,7 @@ export default Sites
 
 const QUERY = graphql`
   query GetSites {
-    allWpSite {
+    allWpSite(sort: {date: ASC}) {
       edges {
         node {
           id
