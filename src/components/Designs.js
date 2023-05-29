@@ -17,7 +17,7 @@ export default Designs
 
 const QUERY = graphql`
   query GetDesigns {
-    allWpDesign {
+    allWpDesign(sort: {date: DESC}) {
       edges {
         node {
           id
